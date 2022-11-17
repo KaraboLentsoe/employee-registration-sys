@@ -1,0 +1,27 @@
+{
+  "name": "form-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.2.1",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11",
+    "@nextui-org/react": "^1.0.0-beta.10",
+    "@supabase/supabase-js": "^1.35.7",
+    "framer-motion": "6",
+    "next": "12.3.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-toastify": "^9.1.1"
+  },
+  "devDependencies": {
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0"
+  }
+}
