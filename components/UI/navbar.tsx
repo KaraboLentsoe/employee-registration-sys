@@ -11,7 +11,7 @@ function Nav() {
       variant="sticky"
       css={{ background: "#155263" }}
     >
-      Navbar
+      <Navbar.Brand>F</Navbar.Brand>
       <Navbar.Content hideIn="xs">
         <Navbar.Link href="#">Name</Navbar.Link>
         <Navbar.Link href="#">Last Name</Navbar.Link>
