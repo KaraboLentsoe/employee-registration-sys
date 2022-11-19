@@ -6,14 +6,13 @@ function Footer() {
     <div
       style={{
         height: 100,
-
         backgroundColor: "#155263",
         color: "white",
         marginTop: "90px",
       }}
     >
       <footer>
-        <div css={{ marginLeft: "360px" }}>
+        <div>
           <h6>
             &copy; 2022
             <a href="https://karabolentsoe-personal-portfolio.netlify.app/">

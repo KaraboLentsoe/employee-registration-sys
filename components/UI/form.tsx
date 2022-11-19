@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Container, Card, Row, styled, Button } from "@nextui-org/react";
 import { Dropdown } from "@nextui-org/react";
 import { Input, Spacer } from "@nextui-org/react";
 import { supabase } from "../../utils/supabaseClient";
 import { ToastContainer, toast } from "react-toastify";
 
+interface IEventProps{
+ preventDefault: () => void; 
+}
+interface IOnChangeProps {
+  target: { name: string; value: string; };
+}
 export default function Form() {
   /* Install Chackra UI(search) and Include a Navbar */
   // Name
@@ -65,7 +71,9 @@ export default function Form() {
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: IOnChangeProps) => {
+
+    console.log("event check :", typeof event.target.value);
     //event is not key but target is a react "function/keyword"
     setFormRegister({
       ...formRegister,
@@ -73,7 +81,7 @@ export default function Form() {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:IEventProps) => {
     event.preventDefault();
     submissionToDataBase();
   };
@@ -87,9 +95,9 @@ export default function Form() {
   // The Styling of a Button Using Next UI
 
   // Dropdown Usability below
-  const [select, setSelected] = useState(new Set(["Select One"]));
+  const [select, setSelected] = useState(new  Set(["Select One"]));
 
-  const selectedValue = React.useMemo(
+  const selectedValue = useMemo(
     () => Array.from(select).join(", ").replace("/_", "/ "),
     [select]
   );
@@ -97,7 +105,7 @@ export default function Form() {
   return (
     <>
       <ToastContainer />
-      <Container justify="center" align="center">
+      <Container alignItems="center">
         <Card
           css={{
             mw: "50rem",
@@ -188,7 +196,7 @@ export default function Form() {
                       aria-label="Static Actions"
                       selectionMode="single"
                       selectedKeys={select}
-                      onSelectionChange={setSelected}
+                      onSelectionChange={setSelected as any}
                     >
                       <Dropdown.Item key="Visitor" withDivider>
                         Visitor
